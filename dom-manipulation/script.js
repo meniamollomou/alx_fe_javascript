@@ -8,8 +8,11 @@ let quotes = [
   { text: "You only live once, but if you do it right, once is enough.", category: "Life" },
   { text: "The purpose of our lives is to be happy.", category: "Happiness" },
   { text: "Get busy living or get busy dying.", category: "Motivation" },
-  { text: "You have within you right now, everything you need to deal with whatever the world can throw at you.", category: "Inspiration" },
-  { text: "Believe you can and you're halfway there.", category: "Motivation" }
+  { text: "You have within you right now, everything you need to deal with whatever the world can throw at you.", category: "Inspiration" }
+  { text: "Believe you can and you're halfway there.", category: "Motivation" },
+  { text: "Act as if what you do makes a difference. It does.", category: "Inspiration" },
+  { text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", category: "Motivation" },
+  { text: "What lies behind us and what lies before us are tiny matters compared to what lies within us.", category: "Inspiration" },
 ];
 
 // Select DOM elements
@@ -17,15 +20,15 @@ const quoteDisplay = document.getElementById("quoteDisplay");
 const newQuoteBtn = document.getElementById("newQuote");
 const addQuoteBtn = document.getElementById("addQuoteBtn");
 
-// Function to show a random quote
-function showRandomQuote() {
+// ✅ Function name updated and uses innerHTML
+function displayRandomQuote() {
   if (quotes.length === 0) {
-    quoteDisplay.textContent = "No quotes available.";
+    quoteDisplay.innerHTML = "No quotes available.";
     return;
   }
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const quote = quotes[randomIndex];
-  quoteDisplay.textContent = `"${quote.text}" — [${quote.category}]`;
+  quoteDisplay.innerHTML = `"${quote.text}" — <em>${quote.category}</em>`;
 }
 
 // Function to add a new quote
@@ -48,6 +51,6 @@ function addQuote() {
   alert("Quote added successfully!");
 }
 
-// Event listeners
-newQuoteBtn.addEventListener("click", showRandomQuote);
+// ✅ Use correct function name for the event listener
+newQuoteBtn.addEventListener("click", displayRandomQuote);
 addQuoteBtn.addEventListener("click", addQuote);
