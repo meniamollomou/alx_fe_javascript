@@ -11,6 +11,7 @@
       padding: 40px;
       text-align: center;
     }
+
     #quoteDisplay {
       margin: 20px auto;
       padding: 20px;
@@ -20,13 +21,19 @@
       max-width: 500px;
       font-size: 20px;
     }
+
     input, button {
       padding: 10px;
       margin: 5px;
       font-size: 16px;
     }
+
     input {
       width: 200px;
+    }
+
+    #importExportContainer {
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -36,6 +43,16 @@
 
   <div id="quoteDisplay">Click the button to see a quote!</div>
   <button id="newQuote">Show New Quote</button>
+
+  <!-- Add Quote Form will be generated here -->
+  <div id="formContainer"></div>
+
+  <!-- Import / Export Controls -->
+  <div id="importExportContainer">
+    <h2>Import / Export Quotes</h2>
+    <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+    <button id="exportBtn">Export Quotes</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
