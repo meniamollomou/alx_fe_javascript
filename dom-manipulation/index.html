@@ -32,12 +32,16 @@
       width: 200px;
     }
 
+    #categoryFilter {
+      margin-top: 20px;
+    }
+
     #importExportContainer {
       margin-top: 30px;
     }
 
-    #categoryFilter {
-      margin-top: 20px;
+    h2 {
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -54,8 +58,9 @@
   <!-- Category Filter Dropdown -->
   <div>
     <label for="categoryFilter"><strong>Filter by Category:</strong></label>
-    <select id="categoryFilter" onchange="filterQuotes()">
+    <select id="categoryFilter">
       <option value="all">All Categories</option>
+      <!-- Populated by JS -->
     </select>
   </div>
 
@@ -69,6 +74,7 @@
     <button id="exportBtn">Export Quotes</button>
   </div>
 
+  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
